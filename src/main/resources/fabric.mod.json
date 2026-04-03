@@ -1,33 +1,22 @@
 {
-	"schemaVersion": 1,
-	"id": "genie-mod",
-	"version": "${version}",
-	"name": "Genie Mod",
-	"description": "Find ancient temples, obtain the Genie Lamp and have your wishes granted - but beware of tricky effects!",
-	"authors": [
-		"Sкера"
-	],
-	"contact": {
-		"homepage": "https://github.com/skera/genie-mod"
-	},
-	"license": "MIT",
-	"icon": "assets/genie/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.skera.genie.GenieMod"
-		],
-		"client": [
-			"com.skera.genie.client.GenieModClient"
-		]
-	},
-	"mixins": [
-		"genie-mod.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.15.0",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "genie",
+  "version": "1.0.0",
+  "name": "Genie Mod",
+  "description": "Find lamps, make wishes, beware of tricks!",
+  "authors": ["skera"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/genie/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.skera.genie.GenieMod"],
+    "client": ["com.skera.genie.client.GenieModClient"]
+  },
+  "mixins": ["genie.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "~1.20.1",
+    "fabric-api": "*"
+  }
 }
