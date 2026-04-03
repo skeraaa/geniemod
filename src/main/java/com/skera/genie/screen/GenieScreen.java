@@ -4,40 +4,24 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import com.skera.genie.GenieMod;
 
 public class GenieScreen extends Screen {
-	private static final Identifier TEXTURE = new Identifier(GenieMod.MOD_ID, "textures/gui/genie_screen.png");
-	
+	private static final Identifier TEXTURE = new Identifier("genie", "textures/gui/genie_gui.png");
+
 	public GenieScreen() {
-		super(Text.literal("Джин"));
+		super(Text.literal("Выбор желания"));
 	}
-	
+
 	@Override
 	protected void init() {
-		super.init();
-		
-		// TODO: Добавить кнопки с желаниями
+		// Добавление кнопок категорий и желаний
+		// addDrawableChild(Button.builder(Text.literal("Богатство"), btn -> {}).positions(...));
 	}
-	
+
 	@Override
 	public void render(DrawContext context, int mouseX, int mouseY, float delta) {
 		this.renderBackground(context);
 		super.render(context, mouseX, mouseY, delta);
-		
-		int x = (this.width - 256) / 2;
-		int y = (this.height - 166) / 2;
-		
-		context.drawText(this.textRenderer, "Выберите желание", x + 80, y + 20, 0x404040, true);
-	}
-	
-	@Override
-	public boolean shouldCloseOnEsc() {
-		return true;
-	}
-	
-	@Override
-	public void close() {
-		super.close();
+		context.drawText(this.textRenderer, "Выбери желание,", width / 2 - 40, height / 2 - 50, 0xFFFFFF, true);
 	}
 }
