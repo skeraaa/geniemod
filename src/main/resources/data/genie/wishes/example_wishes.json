@@ -1,0 +1,88 @@
+{
+  "wishes": [
+    {
+      "id": "genie:wealth_gold",
+      "category": "Богатство",
+      "displayName": "Золото x64",
+      "baseRisk": 0.3,
+      "effect": {
+        "type": "item",
+        "itemId": "minecraft:gold_ingot",
+        "count": 64
+      },
+      "trickyEffect": {
+        "type": "spawn_mob",
+        "mobId": "minecraft:creeper"
+      }
+    },
+    {
+      "id": "genie:wealth_diamonds",
+      "category": "Богатство",
+      "displayName": "Алмазы x10",
+      "baseRisk": 0.5,
+      "effect": {
+        "type": "item",
+        "itemId": "minecraft:diamond",
+        "count": 10
+      },
+      "trickyEffect": {
+        "type": "teleport",
+        "x": 0,
+        "y": -50,
+        "z": 0
+      }
+    },
+    {
+      "id": "genie:power_strength",
+      "category": "Сила",
+      "displayName": "Сила III (5 мин)",
+      "baseRisk": 0.2,
+      "effect": {
+        "type": "effect",
+        "effectId": 1,
+        "duration": 300,
+        "amplifier": 2
+      },
+      "trickyEffect": {
+        "type": "effect",
+        "effectId": 4,
+        "duration": 60,
+        "amplifier": 1
+      }
+    },
+    {
+      "id": "genie:health_regeneration",
+      "category": "Здоровье",
+      "displayName": "Регенерация + Исцеление",
+      "baseRisk": 0.15,
+      "effect": {
+        "type": "effect",
+        "effectId": 10,
+        "duration": 120,
+        "amplifier": 1
+      },
+      "trickyEffect": {
+        "type": "effect",
+        "effectId": 7,
+        "duration": 30,
+        "amplifier": 0
+      }
+    },
+    {
+      "id": "genie:transport_home",
+      "category": "Транспорт",
+      "displayName": "Телепорт к спавну",
+      "baseRisk": 0.1,
+      "effect": {
+        "type": "teleport",
+        "x": 0,
+        "y": 100,
+        "z": 0
+      },
+      "trickyEffect": {
+        "type": "spawn_mob",
+        "mobId": "minecraft:phantom"
+      }
+    }
+  ]
+}
