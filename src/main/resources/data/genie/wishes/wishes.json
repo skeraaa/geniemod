@@ -73,7 +73,7 @@
     "category": "Знания",
     "displayName": "Хочу мудрости!",
     "baseRisk": 0.3,
-    "effect": { "type": "effect", "effectId": "minecraft:experience_boost", "duration": 100, "amplifier": 4 }, 
+    "effect": { "type": "effect", "effectId": "minecraft:experience_boost", "duration": 100, "amplifier": 4 },
     "trickyEffect": { "type": "item", "itemId": "minecraft:writable_book", "count": 1, "customName": "Книга мудрости" }
   },
   "special_free": {
