@@ -4,54 +4,44 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.ActionResult;
+import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import com.skera.genie.network.ModPackets;
-import net.minecraft.server.network.ServerPlayerEntity;
+import com.skera.genie.network.WishHandler;
 
 public class LampItem extends Item {
 	public LampItem(Settings settings) {
 		super(settings);
 	}
-	
+
 	@Override
-	public ActionResult use(World world, PlayerEntity user, Hand hand) {
-		ItemStack stack = user.getStackInHand(hand);
-		
+	public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+		ItemStack stack = player.getStackInHand(hand);
 		if (!world.isClient) {
-			// Send packet to open GUI on client
-			if (user instanceof ServerPlayerEntity serverPlayer) {
-				ModPackets.openGenieScreen(serverPlayer);
-			}
+			// Открываем GUI на клиенте, но здесь можно отправить пакет
+			player.sendMessage(Text.literal("§5Джин слушает тебя... (Открой GUI)"), true);
+			// В реальной реализации: PacketSender.send(new OpenGenieScreenPacket(stack));
+		} else {
+			// Клиентская часть открытия экрана
+			// GenieModClient.openScreen(stack);
 		}
-		
-		return ActionResult.SUCCESS;
+		return TypedActionResult.success(stack);
 	}
 	
-	public static int getWishesRemaining(ItemStack stack) {
+	public static int getWishesLeft(ItemStack stack) {
 		NbtCompound nbt = stack.getNbt();
-		if (nbt == null || !nbt.contains("WishesRemaining")) {
-			return 0;
-		}
-		return nbt.getInt("WishesRemaining");
+		if (nbt == null) return 0;
+		return nbt.getInt("wishes_left");
 	}
 	
-	public static void setWishesRemaining(ItemStack stack, int wishes) {
-		NbtCompound nbt = stack.getOrCreateNbt();
-		nbt.putInt("WishesRemaining", wishes);
+	public static void setWishesLeft(ItemStack stack, int count) {
+		stack.getOrCreateNbt().putInt("wishes_left", count);
 	}
 	
-	public static String getGenieRarity(ItemStack stack) {
+	public static String getRarity(ItemStack stack) {
 		NbtCompound nbt = stack.getNbt();
-		if (nbt == null || !nbt.contains("GenieRarity")) {
-			return "common";
-		}
-		return nbt.getString("GenieRarity");
-	}
-	
-	public static void setGenieRarity(ItemStack stack, String rarity) {
-		NbtCompound nbt = stack.getOrCreateNbt();
-		nbt.putString("GenieRarity", rarity);
+		if (nbt == null) return "common";
+		return nbt.getString("rarity");
 	}
 }
