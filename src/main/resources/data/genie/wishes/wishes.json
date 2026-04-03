@@ -1,0 +1,191 @@
+{
+  "wishes": [
+    {
+      "id": "wealth_gold",
+      "category": "wealth",
+      "text": "Хочу много золота!",
+      "normal": {
+        "type": "item",
+        "item": "minecraft:gold_ingot",
+        "count": 64
+      },
+      "tricky": {
+        "type": "item",
+        "item": "minecraft:gold_nugget",
+        "count": 64
+      }
+    },
+    {
+      "id": "wealth_diamonds",
+      "category": "wealth",
+      "text": "Хочу много алмазов!",
+      "normal": {
+        "type": "item",
+        "item": "minecraft:diamond_block",
+        "count": 10
+      },
+      "tricky": {
+        "type": "item",
+        "item": "minecraft:glass",
+        "count": 10,
+        "nbt": "{display:{Name:'\\\"Фейковый алмазный блок\\\"'},BlockEntityTag:{fake:true}}"
+      }
+    },
+    {
+      "id": "wealth_treasures",
+      "category": "wealth",
+      "text": "Хочу много драгоценностей!",
+      "normal": {
+        "items": [
+          {"item": "minecraft:netherite_ingot", "count": 8},
+          {"item": "minecraft:diamond", "count": 32},
+          {"item": "minecraft:emerald", "count": 32}
+        ]
+      },
+      "tricky": {
+        "items": [
+          {"item": "minecraft:gold_ingot", "count": 8},
+          {"item": "minecraft:iron_ingot", "count": 16},
+          {"item": "minecraft:copper_ingot", "count": 32}
+        ]
+      }
+    },
+    {
+      "id": "health_immortality",
+      "category": "health",
+      "text": "Хочу бессмертие!",
+      "normal": {
+        "effects": [
+          {"effect": "minecraft:regeneration", "duration": 12000, "amplifier": 1},
+          {"effect": "minecraft:resistance", "duration": 12000, "amplifier": 1},
+          {"effect": "minecraft:saturation", "duration": 12000, "amplifier": 1}
+        ]
+      },
+      "tricky": {
+        "type": "curse_vampire",
+        "rank": "low"
+      }
+    },
+    {
+      "id": "health_heal",
+      "category": "health",
+      "text": "Хочу здоровье!",
+      "normal": {
+        "clear_negative": true,
+        "effects": [{"effect": "minecraft:regeneration", "duration": 6000, "amplifier": 1}]
+      },
+      "tricky": {
+        "effects": [
+          {"effect": "minecraft:poison", "duration": 6000, "amplifier": 1},
+          {"effect": "minecraft:hunger", "duration": 6000, "amplifier": 1},
+          {"effect": "minecraft:weakness", "duration": 6000, "amplifier": 1}
+        ],
+        "item": "minecraft:milk_bucket"
+      }
+    },
+    {
+      "id": "power_fly",
+      "category": "power",
+      "text": "Хочу летать!",
+      "normal": {
+        "type": "creative_flight",
+        "duration": 36000
+      },
+      "tricky": {
+        "type": "item",
+        "item": "minecraft:elytra",
+        "count": 1,
+        "damage": 430
+      }
+    },
+    {
+      "id": "power_god",
+      "category": "power",
+      "text": "Хочу стать богом!",
+      "normal": {
+        "type": "golden_lamp"
+      },
+      "tricky": {
+        "type": "golden_lamp"
+      }
+    },
+    {
+      "id": "love_loved",
+      "category": "love",
+      "text": "Хочу, чтобы меня любили!",
+      "normal": {
+        "village_hero": 12000,
+        "easy_tame": true
+      },
+      "tricky": {
+        "mob_aggro_range": 250
+      }
+    },
+    {
+      "id": "love_friend",
+      "category": "love",
+      "text": "Хочу крепкую дружбу!",
+      "normal": {
+        "spawn": ["minecraft:wolf", "minecraft:horse"]
+      },
+      "tricky": {
+        "spawn": ["minecraft:donkey", "minecraft:pig"]
+      }
+    },
+    {
+      "id": "knowledge_infinite",
+      "category": "knowledge",
+      "text": "Хочу бесконечные знания!",
+      "normal": {
+        "type": "all_enchants_book"
+      },
+      "tricky": {
+        "type": "item",
+        "item": "minecraft:enchanted_book",
+        "count": 128,
+        "enchant": "minecraft:infinity"
+      }
+    },
+    {
+      "id": "knowledge_wisdom",
+      "category": "knowledge",
+      "text": "Хочу мудрости!",
+      "normal": {
+        "xp_levels": 50
+      },
+      "tricky": {
+        "type": "written_book",
+        "pages": 50,
+        "last_text": "Умный в гору не пойдёт, умный гору обойдёт."
+      }
+    },
+    {
+      "id": "special_free",
+      "category": "special",
+      "text": "Хочу тебя освободить!",
+      "normal": {
+        "break_lamp": true,
+        "ghost_genie": true
+      },
+      "tricky": {
+        "give_golden_lamp": true
+      }
+    },
+    {
+      "id": "special_infinite",
+      "category": "special",
+      "text": "Хочу бесконечное количество желаний!",
+      "normal": {
+        "item": "paper",
+        "name": "Купон на бесконечные желания"
+      },
+      "tricky": {
+        "items": [
+          {"item": "cod", "name": "Мёртвая золотая рыбка"},
+          {"item": "rose_bush", "name": "Цветик-семицветик"},
+          {"item": "string", "name": "Волос Хатабыча"}
+        ]
+      }
+    }
+  ]
+}
