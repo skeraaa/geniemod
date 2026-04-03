@@ -1,233 +1,93 @@
 {
-  "wishes": [
-    {
-      "id": "genie:wealth_gold",
-      "category": "Богатство",
-      "displayName": "Хочу много золота!",
-      "baseRisk": 0.3,
-      "effect": {
-        "type": "item",
-        "itemId": "minecraft:gold_ingot",
-        "count": 64
-      },
-      "trickyEffect": {
-        "type": "item",
-        "itemId": "minecraft:gold_nugget",
-        "count": 64
-      }
-    },
-    {
-      "id": "genie:wealth_diamond",
-      "category": "Богатство",
-      "displayName": "Хочу много алмазов!",
-      "baseRisk": 0.4,
-      "effect": {
-        "type": "item",
-        "itemId": "minecraft:diamond_block",
-        "count": 10
-      },
-      "trickyEffect": {
-        "type": "fake_block",
-        "itemId": "minecraft:diamond_block",
-        "count": 10,
-        "customName": "Фейковый алмазный блок",
-        "data": "heavy,cannot_craft,cannot_beacon"
-      }
-    },
-    {
-      "id": "genie:wealth_treasures",
-      "category": "Богатство",
-      "displayName": "Хочу много драгоценностей!",
-      "baseRisk": 0.5,
-      "effect": {
-        "type": "multi_item",
-        "items": [
-          {"itemId": "minecraft:netherite_ingot", "count": 8},
-          {"itemId": "minecraft:diamond", "count": 32},
-          {"itemId": "minecraft:emerald", "count": 32}
-        ]
-      },
-      "trickyEffect": {
-        "type": "multi_item",
-        "items": [
-          {"itemId": "minecraft:gold_ingot", "count": 8},
-          {"itemId": "minecraft:iron_ingot", "count": 16},
-          {"itemId": "minecraft:copper_ingot", "count": 32}
-        ]
-      }
-    },
-    {
-      "id": "genie:health_immortality",
-      "category": "Здоровье",
-      "displayName": "Хочу бессмертие!",
-      "baseRisk": 0.6,
-      "effect": {
-        "type": "multi_effect",
-        "effects": [
-          {"effectId": "minecraft:regeneration", "duration": 240000, "amplifier": 1},
-          {"effectId": "minecraft:resistance", "duration": 240000, "amplifier": 1},
-          {"effectId": "minecraft:saturation", "duration": 240000, "amplifier": 1}
-        ]
-      },
-      "trickyEffect": {
-        "type": "vampire",
-        "rank": "low",
-        "customName": "Низший вампир"
-      }
-    },
-    {
-      "id": "genie:health_heal",
-      "category": "Здоровье",
-      "displayName": "Хочу здоровье!",
-      "baseRisk": 0.2,
-      "effect": {
-        "type": "cleanse_and_heal",
-        "removeCurse": true,
-        "effects": [
-          {"effectId": "minecraft:regeneration", "duration": 6000, "amplifier": 1}
-        ]
-      },
-      "trickyEffect": {
-        "type": "poison_and_milk",
-        "effects": [
-          {"effectId": "minecraft:poison", "duration": 6000, "amplifier": 1},
-          {"effectId": "minecraft:hunger", "duration": 6000, "amplifier": 1},
-          {"effectId": "minecraft:weakness", "duration": 6000, "amplifier": 1}
-        ],
-        "giveItem": {"itemId": "minecraft:milk_bucket", "count": 1}
-      }
-    },
-    {
-      "id": "genie:power_flight",
-      "category": "Всемогущество",
-      "displayName": "Хочу летать!",
-      "baseRisk": 0.4,
-      "effect": {
-        "type": "creative_flight",
-        "duration": 72000
-      },
-      "trickyEffect": {
-        "type": "item",
-        "itemId": "minecraft:elytra",
-        "count": 1,
-        "damage": 497
-      }
-    },
-    {
-      "id": "genie:power_god",
-      "category": "Всемогущество",
-      "displayName": "Хочу стать богом!",
-      "baseRisk": 0.0,
-      "effect": {
-        "type": "custom_item",
-        "itemId": "minecraft:golden_lamp",
-        "count": 1,
-        "customName": "Золотая лампа",
-        "lore": ["Отныне вы – божество!..", "Но увы, одной воли не хватит..."]
-      },
-      "trickyEffect": {
-        "type": "custom_item",
-        "itemId": "minecraft:golden_lamp",
-        "count": 1,
-        "customName": "Золотая лампа",
-        "lore": ["Отныне вы – божество!..", "Но увы, одной воли не хватит..."]
-      }
-    },
-    {
-      "id": "genie:love_popularity",
-      "category": "Любовь",
-      "displayName": "Хочу, чтобы меня любили!",
-      "baseRisk": 0.3,
-      "effect": {
-        "type": "hero_of_village",
-        "level": 5,
-        "duration": 240000,
-        "easyTame": true
-      },
-      "trickyEffect": {
-        "type": "mob_aggro",
-        "range": 250,
-        "mobs": ["hostile"]
-      }
-    },
-    {
-      "id": "genie:love_friendship",
-      "category": "Любовь",
-      "displayName": "Хочу крепкую дружбу!",
-      "baseRisk": 0.2,
-      "effect": {
-        "type": "spawn_tamed",
-        "mobs": ["minecraft:wolf", "minecraft:horse"]
-      },
-      "trickyEffect": {
-        "type": "spawn_tamed",
-        "mobs": ["minecraft:donkey", "minecraft:pig_with_saddle"]
-      }
-    },
-    {
-      "id": "genie:knowledge_infinite",
-      "category": "Знания",
-      "displayName": "Хочу бесконечные знания!",
-      "baseRisk": 0.5,
-      "effect": {
-        "type": "enchanted_book_all",
-        "count": 1
-      },
-      "trickyEffect": {
-        "type": "item",
-        "itemId": "minecraft:enchanted_book",
-        "count": 128,
-        "enchantment": "minecraft:infinity"
-      }
-    },
-    {
-      "id": "genie:knowledge_wisdom",
-      "category": "Знания",
-      "displayName": "Хочу мудрости!",
-      "baseRisk": 0.3,
-      "effect": {
-        "type": "experience",
-        "levels": 50
-      },
-      "trickyEffect": {
-        "type": "custom_book",
-        "pages": 50,
-        "lastPageText": "Умный в гору не пойдёт, умный гору обойдёт."
-      }
-    },
-    {
-      "id": "genie:special_freedom",
-      "category": "Особые",
-      "displayName": "Хочу тебя освободить!",
-      "baseRisk": 0.1,
-      "effect": {
-        "type": "free_genie",
-        "message": "Джин свободен! Теперь он может исполнять желания раз в 5 дней."
-      },
-      "trickyEffect": {
-        "type": "give_golden_lamp",
-        "message": "Джин исчез, оставив вам золотую лампу."
-      }
-    },
-    {
-      "id": "genie:special_infinite_wishes",
-      "category": "Особые",
-      "displayName": "Хочу бесконечное количество желаний!",
-      "baseRisk": 0.9,
-      "effect": {
-        "type": "custom_item",
-        "itemId": "minecraft:paper",
-        "count": 1,
-        "customName": "Купон на бесконечные желания"
-      },
-      "trickyEffect": {
-        "type": "multi_item",
-        "items": [
-          {"itemId": "minecraft:cod", "count": 1, "customName": "Мёртвая золотая рыбка"},
-          {"itemId": "minecraft:poppy", "count": 1, "customName": "Цветик-семицветик"},
-          {"itemId": "minecraft:string", "count": 1, "customName": "Волос Хатабыча"}
-        ]
-      }
-    }
-  ]
+  "wealth_gold": {
+    "category": "Богатство",
+    "displayName": "Хочу много золота!",
+    "baseRisk": 0.3,
+    "effect": { "type": "item", "itemId": "minecraft:gold_ingot", "count": 64 },
+    "trickyEffect": { "type": "item", "itemId": "minecraft:gold_nugget", "count": 64 }
+  },
+  "wealth_diamonds": {
+    "category": "Богатство",
+    "displayName": "Хочу много алмазов!",
+    "baseRisk": 0.4,
+    "effect": { "type": "item", "itemId": "minecraft:diamond_block", "count": 10 },
+    "trickyEffect": { "type": "fake_block", "itemId": "minecraft:diamond_block", "count": 10 }
+  },
+  "wealth_treasure": {
+    "category": "Богатство",
+    "displayName": "Хочу много драгоценностей!",
+    "baseRisk": 0.5,
+    "effect": { "type": "item", "itemId": "minecraft:netherite_ingot", "count": 8 },
+    "trickyEffect": { "type": "item", "itemId": "minecraft:iron_ingot", "count": 16 }
+  },
+  "health_immortality": {
+    "category": "Здоровье",
+    "displayName": "Хочу бессмертие!",
+    "baseRisk": 0.6,
+    "effect": { "type": "effect", "effectId": "minecraft:regeneration", "duration": 1728000, "amplifier": 1 },
+    "trickyEffect": { "type": "vampire", "data": {} }
+  },
+  "health_heal": {
+    "category": "Здоровье",
+    "displayName": "Хочу здоровье!",
+    "baseRisk": 0.2,
+    "effect": { "type": "effect", "effectId": "minecraft:regeneration", "duration": 6000, "amplifier": 1 },
+    "trickyEffect": { "type": "effect", "effectId": "minecraft:poison", "duration": 600, "amplifier": 1 }
+  },
+  "power_fly": {
+    "category": "Всемогущество",
+    "displayName": "Хочу летать!",
+    "baseRisk": 0.5,
+    "effect": { "type": "flight" },
+    "trickyEffect": { "type": "item", "itemId": "minecraft:elytra", "count": 1, "customName": "Дырявые элитры" }
+  },
+  "power_god": {
+    "category": "Всемогущество",
+    "displayName": "Хочу стать богом!",
+    "baseRisk": 1.0,
+    "effect": { "type": "god_mode" },
+    "trickyEffect": { "type": "god_mode" }
+  },
+  "love_loved": {
+    "category": "Любовь",
+    "displayName": "Хочу, чтобы меня любили!",
+    "baseRisk": 0.4,
+    "effect": { "type": "effect", "effectId": "minecraft:hero_of_the_village", "duration": 1728000, "amplifier": 4 },
+    "trickyEffect": { "type": "effect", "effectId": "minecraft:glowing", "duration": 1728000, "amplifier": 0 }
+  },
+  "love_friend": {
+    "category": "Любовь",
+    "displayName": "Хочу крепкую дружбу!",
+    "baseRisk": 0.3,
+    "effect": { "type": "spawn_mob", "mobId": "minecraft:wolf" },
+    "trickyEffect": { "type": "spawn_mob", "mobId": "minecraft:donkey" }
+  },
+  "knowledge_infinite": {
+    "category": "Знания",
+    "displayName": "Хочу бесконечные знания!",
+    "baseRisk": 0.5,
+    "effect": { "type": "item", "itemId": "minecraft:enchanted_book", "count": 1, "customName": "Книга всех чар" },
+    "trickyEffect": { "type": "item", "itemId": "minecraft:book", "count": 128, "customName": "Пустая книга" }
+  },
+  "knowledge_wisdom": {
+    "category": "Знания",
+    "displayName": "Хочу мудрости!",
+    "baseRisk": 0.3,
+    "effect": { "type": "effect", "effectId": "minecraft:experience_boost", "duration": 100, "amplifier": 4 }, 
+    "trickyEffect": { "type": "item", "itemId": "minecraft:writable_book", "count": 1, "customName": "Книга мудрости" }
+  },
+  "special_free": {
+    "category": "Особое",
+    "displayName": "Хочу тебя освободить!",
+    "baseRisk": 0.8,
+    "effect": { "type": "item", "itemId": "minecraft:air", "count": 0 },
+    "trickyEffect": { "type": "item", "itemId": "genie:genie_lamp", "count": 1, "customName": "Золотая Лампа" }
+  },
+  "special_infinite": {
+    "category": "Особое",
+    "displayName": "Хочу бесконечные желания!",
+    "baseRisk": 0.9,
+    "effect": { "type": "item", "itemId": "minecraft:paper", "count": 1, "customName": "Купон на бесконечные желания" },
+    "trickyEffect": { "type": "item", "itemId": "minecraft:cod", "count": 1, "customName": "Мертвая рыбка" }
+  }
 }
